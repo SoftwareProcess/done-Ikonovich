@@ -69,7 +69,14 @@ class CollapseTest(unittest.TestCase):
         
     # Sad path: value less than 0
     def test_ShouldNotCollapseValueBelowZero(self):
-        value = -5
+        value = '-5'
+        expectedResult = None
+        actualResult = collapse.collapse(value)
+        self.assertEqual(expectedResult, actualResult)
+        
+    # Sad path: value is not string
+    def test_ShouldNotCollapseValueNotString(self):
+        value = 1
         expectedResult = None
         actualResult = collapse.collapse(value)
         self.assertEqual(expectedResult, actualResult)
