@@ -64,7 +64,7 @@ class CollapseTest(unittest.TestCase):
     def test_ShouldNotCollapseValueNone(self):
         value = None
         expectedResult = None
-        actualResult = collapse.collapse(value)
+        actualResult = collapse.collapse(None)
         self.assertEqual(expectedResult, actualResult)
         
     # Sad path: value less than 0
